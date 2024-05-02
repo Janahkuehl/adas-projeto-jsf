@@ -13,15 +13,31 @@
 	<h2>Lista de Pessoas</h2>
 	<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
 	
-		<h:column>
+			<h:column>
+			<f:facet name="header">Id</f:facet>
+			#{pessoa.id}
+			</h:column>
+	
+			<h:column>
 			<f:facet name = "header">Nome</f:facet>
 			#{pessoa.nome}
 			</h:column>
 			
 			<h:column>
-				<f:facet name="header">Profissão</f:facet>
-				#{pessoa.profissao}
-				</h:column>
+			<f:facet name="header">Profissão</f:facet>
+			#{pessoa.profissao}
+			</h:column>
+			
+			<h:column>
+			<f:facet name="header">Idade</f:facet>
+			#{pessoa.idade}
+			</h:column>
+			
+			<h:column>
+			<f:facet name="header">Cidade</f:facet>
+			#{pessoa.cidade}
+			</h:column>
+	
 				
 </h:dataTable>
 

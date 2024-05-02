@@ -10,6 +10,8 @@ public class Pessoa implements Serializable{
 	private int id;
 	private String nome;
 	private String profissao;
+	private String idade;
+	private String cidade;
 	
 	public Pessoa() {
 		
@@ -37,6 +39,22 @@ public class Pessoa implements Serializable{
 
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
+	}
+	
+	public String getIdade() {
+		return idade;
+	}
+
+	public void setIdade(String idade) {
+		this.idade = idade;
+	}
+	
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	@Override
