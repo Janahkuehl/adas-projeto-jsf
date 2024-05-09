@@ -13,6 +13,11 @@
 	<h2>Editar de pessoa</h2>
 	<h:form>
 	<h:panelGrid columns="2">
+	
+	
+	<h:outputText value="ID" />
+	<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
+	
 	<h:outputText value="Nome" />
 	<h:inputText value="#{pessoaBean.pessoa.nome}" />
 	
@@ -26,7 +31,7 @@
 	<h:inputText value="#{pessoaBean.pessoa.cidade}" />
 	
 	<h:outputText />
-	<h:commandButton value="Adicionar" action="#{pessoaBean.ediar}" />
+	<h:commandButton value="Salvar" action="#{pessoaBean.editar}" />
 	
 	</h:panelGrid>
 </h:form>

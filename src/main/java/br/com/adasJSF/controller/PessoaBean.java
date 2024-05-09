@@ -34,6 +34,11 @@ public class PessoaBean implements Serializable{
 		return "/pessoa/listar.xhtml";
 	}
 	
+	public String apagar(Pessoa pessoaApagar) {
+		pessoas.remove(pessoaApagar);
+		return null;
+	}
+	
 	public String editar() {
 		int index = pessoas.indexOf(pessoa);
 		Pessoa pessoaEdicao = pessoa;
@@ -56,8 +61,13 @@ public class PessoaBean implements Serializable{
 		pessoa.setId(dadosPessoa.getId());
 		pessoa.setNome(dadosPessoa.getNome());
 		pessoa.setProfissao(dadosPessoa.getProfissao());
+		pessoa.setIdade(dadosPessoa.getIdade());
+		pessoa.setCidade(dadosPessoa.getCidade());
+		
 		
 	}
+	
+
 	
 	
 	private int getSequenciaId() {

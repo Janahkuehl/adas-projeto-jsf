@@ -12,6 +12,7 @@
 
 	<h2>Lista de Pessoas</h2>
 	<h:form>
+	<h:button value="Nova Pessoa" outcome="/pessoa/cadastrar.xhtml" />
 	<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
 	
 			<h:column>
@@ -44,7 +45,7 @@
 			<f:attribute name="pessoa" value="#{pessoa}" />
 			</h:commandButton>
 			</h:column>
-			
+		
 			<h:column>
 			<h:commandButton value="Apagar" action="#{pessoaBean.apagar(pessoa)}" />
 			</h:column>
