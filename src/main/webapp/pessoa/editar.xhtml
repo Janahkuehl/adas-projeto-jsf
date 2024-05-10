@@ -1,41 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html 
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Projeto Adas JSF</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Projeto Adas JSF</title>
+	<link rel="stylesheet" href="../assets/estilo.css"></link>
+	<header>
+	<h2>Sistema Adas :)</h2>
+	</header>
+
 </h:head>
 <h:body>
 
-	<h2>Editar de pessoa</h2>
-	<h:form>
-	<h:panelGrid columns="2">
-	
-	
-	<h:outputText value="ID" />
-	<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
-	
-	<h:outputText value="Nome" />
-	<h:inputText value="#{pessoaBean.pessoa.nome}" />
-	
-	<h:outputText value="Profissao" />
-	<h:inputText value="#{pessoaBean.pessoa.profissao}" />
+	<div class="card">
+		<h:form>
+			<p:growl id="messages" />
 
-	<h:outputText value="Idade" />
-	<h:inputText value="#{pessoaBean.pessoa.idade}" />
-	
-	<h:outputText value="Cidade" />
-	<h:inputText value="#{pessoaBean.pessoa.cidade}" />
-	
-	<h:outputText />
-	<h:commandButton value="Salvar" action="#{pessoaBean.editar}" />
-	<h:button value="Cancelar" outcome="/pessoa/listar.xhtml"/>
-	
-	</h:panelGrid>
-</h:form>
+			<p:menubar>
+				<p:submenu label="Cadastros" icon="pi pi-fw pi-plus">
+					<p:menuitem value="Pessoa" icon="pi pi-fw pi-user"
+						outcome="/pessoa/cadastrar.xhtml" />
+				</p:submenu>
+
+				<p:submenu label="Listas" icon="pi pi-fw pi-list">
+					<p:menuitem value="Pessoa" icon="pi pi-fw pi-user"
+						outcome="/pessoa/listar.xhtml" />
+				</p:submenu>
+
+				<p:divider layout="vertical" />
+
+				<p:menuitem value="Menu Principal" icon="pi pi-fw pi-home"
+					outcome="/menu.xhtmml" />
+
+				<f:facet name="options">
+					<div class="ui-input-icon-left mr-2">
+						<i class="pi pi-fw pi-search" />
+						<p:inputText placeholder="Buscar" />
+					</div>
+					<p:button value="Sair" icon="pi pi-fw pi-sign-out"
+						styleClass="ui-button-info" />
+				</f:facet>
+			</p:menubar>
+		</h:form>
+	</div>
+
+	<div class="card">
+		<h5 style="margin-top: 0">Edição de pessoas</h5>
+		<h:form>
+			<p:panelGrid columns="2">
+
+				<p:outputLabel value="ID" />
+				<p:inputText value="#{pessoaBean.pessoa.id}" readolny="true" />
+
+				<p:outputLabel value="Nome" />
+				<p:inputText value="#{pessoaBean.pessoa.nome}" />
+
+				<p:outputLabel value="Profissao" />
+				<p:inputText value="#{pessoaBean.pessoa.profissao}" />
+
+				<p:outputLabel value="Idade" />
+				<p:inputText value="#{pessoaBean.pessoa.idade}" />
+
+				<p:outputLabel value="Cidade" />
+				<p:inputText value="#{pessoaBean.pessoa.cidade}" />
+
+
+				<p:row>
+					<p:column styleClass="ui-grid-col-12">
+						<p:commandButton value="Salvar" styleClass="mr-2"
+							style="width: auto" action="#{pessoaBean.editar}" />
+
+						<p:button value="Cancelar" styleClass="mr-2" style="width: auto"
+							outcome="/pessoa/listar.xhtml" />
+					</p:column>
+				</p:row>
+
+			</p:panelGrid>
+		</h:form>
+	</div>
 
 </h:body>
 </html>

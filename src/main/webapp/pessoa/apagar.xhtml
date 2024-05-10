@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html 
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Projeto Adas JSF</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Projeto Adas JSF</title>
+	<link rel="stylesheet" href="../assets/estilo.css"></link>
+
+	<header>
+	<h2>Sistema Adas :)</h2>
+	</header>
+
 </h:head>
 <h:body>
 
+	<div class="card">
+		<h:form>
+			<p:growl id="messages" />
+
+			<p:menubar>
+				<p:submenu label="Cadastros" icon="pi pi-fw pi-plus">
+					<p:menuitem value="Pessoa" icon="pi pi-fw pi-user"
+						outcome="/pessoa/cadastrar.xhtml" />
+				</p:submenu>
+
+				<p:submenu label="Listas" icon="pi pi-fw pi-list">
+					<p:menuitem value="Pessoa" icon="pi pi-fw pi-user"
+						outcome="/pessoa/listar.xhtml" />
+				</p:submenu>
+
+				<f:facet name="options">
+					<div class="ui-input-icon-left mr-2">
+						<i class="pi pi-fw pi-search" />
+						<p:inputText placeholder="Buscar" />
+					</div>
+					<p:button value="Sair" icon="pi pi-fw pi-sign-out"
+						styleClass="ui-button-info" />
+				</f:facet>
+			</p:menubar>
+		</h:form>
+	</div>
+
 	<h2>Apagar de pessoa</h2>
 	<h:form>
-	<h:panelGrid columns="2">
-	<h:outputText value="Nome" />
-	<h:inputText value="#{pessoaBean.pessoa.nome}" />
-	
-	<h:outputText value="Profissao" />
-	<h:inputText value="#{pessoaBean.pessoa.profissao}" />
+		<h:panelGrid columns="2">
+			<h:outputText value="Nome" />
+			<h:inputText value="#{pessoaBean.pessoa.nome}" />
 
-	<h:outputText value="Idade" />
-	<h:inputText value="#{pessoaBean.pessoa.idade}" />
-	
-	<h:outputText value="Cidade" />
-	<h:inputText value="#{pessoaBean.pessoa.cidade}" />
-	
-	<h:outputText />
-	<h:commandButton value="Apagar" action="#{pessoaBean.apagar}" />
-	
-	</h:panelGrid>
-</h:form>
+			<h:outputText value="Profissao" />
+			<h:inputText value="#{pessoaBean.pessoa.profissao}" />
+
+			<h:outputText value="Idade" />
+			<h:inputText value="#{pessoaBean.pessoa.idade}" />
+
+			<h:outputText value="Cidade" />
+			<h:inputText value="#{pessoaBean.pessoa.cidade}" />
+
+			<h:outputText />
+			<h:commandButton value="Apagar" action="#{pessoaBean.apagar}" />
+
+		</h:panelGrid>
+	</h:form>
 
 </h:body>
 </html>
